@@ -20,5 +20,4 @@ $t = new Translator($lang);
 <body>
 <header>
     <h1>A3 Panel</h1>
-    <p><?php echo $t->translate('greeting'); ?></p>
 </header>

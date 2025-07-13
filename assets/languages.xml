@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Languages>
-    <Key ID="greeting">
-        <French>Bonjour</French>
-        <English>Hello</English>
+    <Key ID="dashboard_title">
+        <French>Titre du tableau de bord</French>
+        <English>Dashboard Title</English>
     </Key>
 </Languages>
