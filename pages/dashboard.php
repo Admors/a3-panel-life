@@ -84,7 +84,7 @@
                     <h5 class="card-title text-center"><i class="bi bi-megaphone text-primary fs-3"></i> Global Message</h5>
                     <form action="send_message.php" method="post">
                         <div class="mb-3">
-                            <textarea name="server_message" class="form-control" rows="3" placeholder="Type your message here..." required></textarea>
+                            <textarea name="server_message" class="form-control" rows="1" placeholder="Type your message here..." required></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary w-50">
