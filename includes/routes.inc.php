@@ -1,144 +1,57 @@
 <?php
 $routes = [
-    '#^/$#' => 'Dashboard',
-    '#^/dashboard$#' => 'Dashboard',
-    '#^/login$#' => 'Login',
-    '#^/logout$#' => 'Logout',
-    '#^/players$#' => 'Players',
-    '#^/players/(\d+)$#' => 'PlayerDetail',
-    '#^/vehicles$#' => 'Vehicles',
-    '#^/vehicles/(\d+)$#' => 'VehicleDetail',
-    '#^/gangs$#' => 'Gangs',
-    '#^/gangs/(\d+)$#' => 'GangDetail',
-    '#^/houses$#' => 'Houses',
-    '#^/houses/(\d+)$#' => 'HouseDetail',
-    '#^/logs$#' => 'Logs',
-    '#^/notes$#' => 'Notes',
-    '#^/notes/(\d+)$#' => 'NoteDetail',
-    '#^/staff$#' => 'Staff',
-    '#^/settings$#' => 'Settings',
+    '/' => ['file' => 'pages/dashboard.php'],
+    '/dashboard' => ['file' => 'pages/dashboard.php'],
+    '/login' => ['file' => 'pages/login.php'],
+    '/logout' => ['file' => 'pages/logout.php'],
+    '/players' => ['file' => 'pages/players.php'],
+    '/players/{id}' => ['file' => 'pages/player_detail.php', 'params' => ['id']],
+    '/vehicles' => ['file' => 'pages/vehicles.php'],
+    '/vehicles/{id}' => ['file' => 'pages/vehicle_detail.php', 'params' => ['id']],
+    '/gangs' => ['file' => 'pages/gangs.php'],
+    '/gangs/{id}' => ['file' => 'pages/gang_detail.php', 'params' => ['id']],
+    '/houses' => ['file' => 'pages/houses.php'],
+    '/houses/{id}' => ['file' => 'pages/house_detail.php', 'params' => ['id']],
+    '/logs' => ['file' => 'pages/logs.php'],
+    '/notes' => ['file' => 'pages/notes.php'],
+    '/notes/{id}' => ['file' => 'pages/note_detail.php', 'params' => ['id']],
+    '/staff' => ['file' => 'pages/staff.php'],
+    '/settings' => ['file' => 'pages/settings.php'],
 ];
 
-function Dashboard()
-{
-    require_once __DIR__ . '/../pages/dashboard.php';
-}
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestUri = rtrim($requestUri, '/') ?: '/';
 
-function Login()
-{
-    require_once __DIR__ . '/../pages/login.php';
-}
+$found = false;
 
-function Logout()
-{
-    require_once __DIR__ . '/../pages/logout.php';
-}
+foreach ($routes as $route => $config) {
+    // Transforme /user/{id} → regex /user/([a-zA-Z0-9_-]+)
+    $pattern = preg_replace('#\{[a-zA-Z_]+\}#', '([a-zA-Z0-9_-]+)', $route);
+    $pattern = "#^" . ($route === '/' ? '/' : rtrim($pattern, '/')) . "$#";
 
-function Players()
-{
-    require_once __DIR__ . '/../pages/players.php';
-}
+    if (preg_match($pattern, $requestUri, $matches)) {
+        array_shift($matches); // supprime le match complet
 
-function PlayerDetail($id)
-{
-    include __DIR__ . '/../pages/player-detail.php';
-}
+        // Gère les paramètres si besoin
+        $params = [];
+        if (!empty($config['params'])) {
+            foreach ($config['params'] as $index => $key) {
+                $params[$key] = $matches[$index] ?? null;
+            }
+        }
 
-function Vehicles()
-{
-    require_once __DIR__ . '/../pages/vehicles.php';
-}
+        // Injecte les paramètres dans $_GET
+        foreach ($params as $k => $v) {
+            $_GET[$k] = $v;
+        }
 
-function VehicleDetail($id)
-{
-    include __DIR__ . '/../pages/vehicle-detail.php';
-}
-
-function Gangs()
-{
-    require_once __DIR__ . '/../pages/gangs.php';
-}
-
-function GangDetail($id)
-{
-    include __DIR__ . '/../pages/gang-detail.php';
-}
-
-function Houses()
-{
-    require_once __DIR__ . '/../pages/houses.php';
-}
-
-function HouseDetail($id)
-{
-    include __DIR__ . '/../pages/house-detail.php';
-}
-
-function Logs()
-{
-    require_once __DIR__ . '/../pages/logs.php';
-}
-
-function Notes()
-{
-    require_once __DIR__ . '/../pages/notes.php';
-}
-
-function NoteDetail($id)
-{
-    include __DIR__ . '/../pages/note-detail.php';
-}
-
-function Staff()
-{
-    require_once __DIR__ . '/../pages/staff.php';
-}
-
-function Settings()
-{
-    require_once __DIR__ . '/../pages/settings.php';
-}
-
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-// normalisation : suppression du slash final sauf pour la racine
-if ($path !== '/' && str_ends_with($path, '/')) {
-    $path = rtrim($path, '/');
-}
-
-// Vérifier si une route correspond AVANT d'inclure le header
-$matched = false;
-$matchedFunction = null;
-$matchedParams = [];
-
-foreach ($routes as $pattern => $function) {
-    if (preg_match($pattern, $path, $matches)) {
-        $matched = true;
-        $matchedFunction = $function;
-        array_shift($matches);
-        $matchedParams = $matches;
+        include $config['file'];
+        $found = true;
         break;
     }
 }
 
-// Si aucune route ne correspond, définir le code 404 AVANT d'inclure le header
-if (!$matched) {
+if (!$found) {
     http_response_code(404);
-}
-
-// Traiter la logique de la page AVANT d'inclure le header pour permettre les redirections
-if ($matched) {
-    // Démarrer un buffer de sortie pour capturer la sortie de la page
-    ob_start();
-    
-    // Exécuter la fonction de la route correspondante
-    call_user_func_array($matchedFunction, $matchedParams);
-    
-    // Récupérer le contenu généré par la page
-    $pageContent = ob_get_clean();
-} else {
-    // Pour la page 404, on peut démarrer le buffer aussi
-    ob_start();
-    require_once __DIR__ . '/../pages/404.php';
-    $pageContent = ob_get_clean();
+    require_once 'pages/404.php';
 }
