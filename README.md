@@ -1,3 +1,18 @@
+# Table des matières
+
+- [AdminPanel - Redesign & More - English 🚀](#adminpanel---redesign--more---english-)
+  - [About](#-about)
+  - [Screenshots](#-screenshots)
+  - [Installation](#-installation)
+  - [Credits & Acknowledgements](#-credits--acknowledgements)
+- [AdminPanel - Refonte & Autres - Français 🚀](#adminpanel---refonte--autres---français-)
+  - [À propos](#-à-propos)
+  - [Captures d'écran](#-captures-décran)
+  - [Installation](#-installation-1)
+  - [Remerciements & Crédits](#-remerciements--crédits)
+
+---
+
 # AdminPanel - Redesign & More - English 🚀
 > [!IMPORTANT]  
 > ✨ **A community-driven fork and revamp.**
@@ -133,4 +148,3 @@ Un grand merci à l'[auteur original Jason2605](https://github.com/Jason2605/Adm
 </div>
 
 👉 **Dépôt du projet original :** [Jason2605/AdminPanel](https://github.com/Jason2605/AdminPanel)
-
