@@ -1,4 +1,9 @@
 <?php
+require_once __DIR__ . '/lang.inc.php';
+
+$allowed_langs = ['French', 'English'];
+$lang = isset($_GET['lang']) && in_array($_GET['lang'], $allowed_langs) ? $_GET['lang'] : 'French'; // Exemple : ?lang=English
+$t = new Translator($lang);
 
 ?>
 <!DOCTYPE html>
@@ -15,4 +20,5 @@
 <body>
 <header>
     <h1>A3 Panel</h1>
+    <p><?php echo $t->translate('greeting'); ?></p>
 </header>
