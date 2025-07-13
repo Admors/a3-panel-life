@@ -1,1 +1,0 @@
-<h1><?php echo $t->translate('dashboard_title'); ?></h1>
