@@ -9,10 +9,17 @@ class Translator {
     }
 
     private function loadTranslations() {
-        $xml = simplexml_load_file(__DIR__ . '/../assets/languages.xml');
+        $xml = @simplexml_load_file(__DIR__ . '/../assets/languages.xml');
+        if ($xml === false) {
+            throw new \RuntimeException('Failed to load language XML file.');
+        }
         foreach ($xml->Key as $key) {
             $id = (string) $key['ID'];
-            $this->translations[$id] = (string) $key->{$this->lang};
+            if (isset($key->{$this->lang})) {
+                $this->translations[$id] = (string) $key->{$this->lang};
+            } else {
+                $this->translations[$id] = "[$id]";
+            }
         }
     }
 
