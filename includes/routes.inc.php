@@ -45,7 +45,7 @@ foreach ($routes as $route => $config) {
             $_GET[$k] = $v;
         }
 
-        include $config['file'];
+        require_once $config['file'];
         $found = true;
         break;
     }
