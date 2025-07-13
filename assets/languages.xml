@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Languages>
+    <Key ID="greeting">
+        <French>Bonjour</French>
+        <English>Hello</English>
+    </Key>
+</Languages>

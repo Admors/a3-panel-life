@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '\lang.inc.php';
+
+$lang = $_GET['lang'] ?? 'French'; // Exemple : ?lang=English
+$t = new Translator($lang);
 
 ?>
 <!DOCTYPE html>
@@ -15,4 +19,5 @@
 <body>
 <header>
     <h1>A3 Panel</h1>
+    <p><?php echo $t->translate('greeting'); ?></p>
 </header>
