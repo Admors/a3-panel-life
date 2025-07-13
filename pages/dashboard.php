@@ -1,7 +1,7 @@
-<?php require_once 'includes/aside.inc.php';?>
-
 <main class="container-fluid flex-grow-1 my-4">
     <div class="row">
+
+        <?php require_once 'includes/aside.inc.php';?>
 
         <!-- Main Content -->
         <section class="col-md-9 col-lg-10">
@@ -13,7 +13,7 @@
             <!-- Stats Cards -->
             <div class="row g-4 mb-4">
                 <div class="col-md-3">
-                    <div class="card text-white bg-primary shadow">
+                    <div class="card text-primary border-primary shadow">
                         <div class="card-body text-center">
                             <i class="bi bi-person fs-1"></i>
                             <h5 class="card-title mt-2">Players</h5>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="card text-white bg-success shadow">
+                    <div class="card text-sucess border-success shadow">
                         <div class="card-body text-center">
                             <i class="bi bi-car-front fs-1"></i>
                             <h5 class="card-title mt-2">Vehicles</h5>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="card text-white bg-warning shadow">
+                    <div class="card text-warning border-warning shadow">
                         <div class="card-body text-center">
                             <i class="bi bi-cash-stack fs-1"></i>
                             <h5 class="card-title mt-2">Total Money</h5>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div class="card text-white bg-info shadow">
+                    <div class="card text-info border-info shadow">
                         <div class="card-body text-center">
                             <i class="bi bi-person-lines-fill fs-1"></i>
                             <h5 class="card-title mt-2">Players Online</h5>
@@ -94,8 +94,6 @@
                     </form>
                 </div>
             </div>
-
         </section>
-
     </div>
 </main>
