@@ -8,6 +8,11 @@
                 <h2 class="fw-semibold"><i class="bi bi-shield-shaded text-primary"></i> Gang Menu</h2>
             </div>
 
+            <?php
+            require __DIR__ . '/../includes/alert.inc.php';
+            showAlert('success', 'Updated successfully for ID! ');
+            ?>
+
             <div class="table-responsive shadow-sm rounded">
                 <table class="table table-hover align-middle">
                     <thead class="table-light">
