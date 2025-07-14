@@ -42,10 +42,10 @@
                         </select>
                     </td>
                     <td>
-                        <select name="active" class="form-select form-select-sm">
-                            <option value="1" selected>Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="active" value="1" id="activeSwitch1" checked>
+                            <label class="form-check-label" for="activeSwitch1"></label>
+                        </div>
                     </td>
                     <td>
                         <input type="text" name="plate" value="ABC123" class="form-control form-control-sm" required>
