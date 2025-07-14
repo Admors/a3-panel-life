@@ -23,28 +23,5 @@ $t = new Translator($lang);
 <body class="d-flex flex-column min-vh-100">
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="home.php"><i class="bi bi-grid-3x3-gap-fill"></i> A3 Panel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="home.php"><i class="bi bi-house"></i> Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="settings.php"><i class="bi bi-gear"></i> Paramètres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.php"><i class="bi bi-person-circle"></i> Profil</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php require_once 'includes/nav.inc.php';?>
 </header>

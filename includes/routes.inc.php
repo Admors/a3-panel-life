@@ -1,4 +1,5 @@
 <?php
+
 $routes = [
     '/' => ['file' => 'pages/dashboard.php'],
     '/dashboard' => ['file' => 'pages/dashboard.php'],
@@ -17,6 +18,7 @@ $routes = [
     '/notes/{id}' => ['file' => 'pages/note_detail.php', 'params' => ['id']],
     '/staff' => ['file' => 'pages/staff.php'],
     '/settings' => ['file' => 'pages/settings.php'],
+    '/reimbursements' => ['file' => 'pages/reimbursements.php'],
 ];
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
