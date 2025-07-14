@@ -10,6 +10,11 @@
                 <span class="badge bg-primary fs-6">Last updated: <?php echo date('H:i'); ?></span>
             </div>
 
+            <?php
+            require __DIR__ . '/../includes/alert.inc.php';
+            showAlert('success', 'Updated successfully for ID! ');
+            ?>
+
             <!-- Stats Cards -->
             <div class="row g-4 mb-4">
                 <div class="col-md-3">

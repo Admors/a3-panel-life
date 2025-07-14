@@ -8,23 +8,17 @@
                 <h2 class="fw-semibold"><i class="bi bi-cash-coin text-primary"></i> Reimbursement Logs</h2>
             </div>
 
+            <?php
+            require __DIR__ . '/../includes/alert.inc.php';
+            showAlert('success', 'Reimbursement successfully added!');
+            ?>
+
             <!-- Formulaire d'ajout -->
             <div class="card shadow-sm mb-4">
                 <div class="card-header fw-bold">
                     Add Reimbursement Log
                 </div>
                 <div class="card-body">
-
-                    <!-- Embeds statiques de confirmation et d'erreur -->
-                    <div class="alert alert-success d-flex align-items-center" role="alert">
-                        <i class="bi bi-check-circle-fill me-2"></i>
-                        Reimbursement successfully added!
-                    </div>
-
-                    <div class="alert alert-danger d-flex align-items-center" role="alert">
-                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                        Error adding reimbursement. Please try again.
-                    </div>
 
                     <form action="add_reimbursement.php" method="POST" class="row g-3">
                         <div class="col-md-3">
@@ -47,7 +41,6 @@
                     </form>
                 </div>
             </div>
-
 
             <!-- Tableau des remboursements -->
             <div class="table-responsive shadow-sm rounded">
@@ -77,9 +70,5 @@
             </div>
 
         </section>
-
-
-
     </div>
 </main>
-
