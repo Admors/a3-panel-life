@@ -1,7 +1,7 @@
 <!-- Aside -->
 <aside class="col-md-3 col-lg-2 mb-4">
     <div class="list-group shadow sticky-top">
-        <a href="dashboard" class="list-group-item list-group-item-action <?php requestUri()?>"><i class="bi bi-speedometer2"></i> Dashboard</a>
+        <a href="dashboard" class="list-group-item list-group-item-action"><i class="bi bi-speedometer2"></i> Dashboard</a>
         <a href="players" class="list-group-item list-group-item-action"><i class="bi bi-people"></i> Players</a>
         <a href="vehicles" class="list-group-item list-group-item-action"><i class="bi bi-car-front"></i> Vehicles</a>
         <a href="gangs" class="list-group-item list-group-item-action"><i class="bi bi-shield-shaded"></i> Gangs</a>
