@@ -1,4 +1,5 @@
 <?php
+
 $routes = [
     '/' => ['file' => 'pages/dashboard.php'],
     '/dashboard' => ['file' => 'pages/dashboard.php'],
