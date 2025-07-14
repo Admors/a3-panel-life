@@ -1,7 +1,7 @@
 <main class="flex-grow-1 container my-4 d-flex flex-column align-items-center">
 
     <!-- Horloge -->
-    <div id="clock" class="mb-4 fs-1 fw-bold text-primary"></div>
+    <div id="clock" class="mb-4 fs-1 fw-bold text-center mt-3"></div>
 
     <!-- Carte de login Steam -->
     <div class="card shadow p-4 text-center" style="max-width: 400px; width: 100%;">
@@ -16,4 +16,5 @@
 
 </main>
 
+<script src="../assets/js/backgroundRotation.js"></script>
 <script src="../assets/js/clock.js"></script>
