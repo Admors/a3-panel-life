@@ -67,9 +67,6 @@
                                     <button type="submit" class="btn btn-outline-primary btn-sm">
                                         <i class="bi bi-arrow-repeat"></i> Update
                                     </button>
-                                    <a href="edit_player.php?id=1" class="btn btn-outline-secondary btn-sm">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
                                 </div>
                             </td>
                         </form>

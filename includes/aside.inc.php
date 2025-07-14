@@ -10,8 +10,9 @@
         <a href="reimbursements" class="list-group-item list-group-item-action"><i class="bi bi-cash-coin"></i> Reimbursement Logs</a>
         <a href="notes" class="list-group-item list-group-item-action"><i class="bi bi-sticky"></i> Notes</a>
         <a href="staff" class="list-group-item list-group-item-action"><i class="bi bi-person-badge"></i> Staff</a>
-        <a href="steam_accounts" class="list-group-item list-group-item-action"><i class="bi bi-steam"></i> Steam Accounts</a>
-        <hr class="my-1">
-        <a href="logout" class="list-group-item list-group-item-action text-danger"><i class="bi bi-box-arrow-right"></i> Log Out</a>
+
+        <a href="https://ko-fi.com/admors" target="_blank" class="btn btn-success m-2">
+            <i class="bi bi-cup-hot"></i> Support us on Ko-fi
+        </a>
     </div>
 </aside>
