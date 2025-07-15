@@ -2,6 +2,7 @@
 
 $routes = [
     '/' => ['file' => 'pages/dashboard.php'],
+    '/install' => ['file' => 'install/install.php'],
     '/dashboard' => ['file' => 'pages/dashboard.php'],
     '/login' => ['file' => 'pages/login.php'],
     '/logout' => ['file' => 'pages/logout.php'],

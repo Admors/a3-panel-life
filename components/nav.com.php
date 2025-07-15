@@ -11,12 +11,12 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link active" href="dashboard">
-                        <i class="bi bi-speedometer2"></i> Dashboard
+                        <i class="bi bi-speedometer2"></i> <?php echo $t->translate('dashboard_text'); ?>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="settings">
-                        <i class="bi bi-gear"></i> Paramètres
+                        <i class="bi bi-gear"></i> <?php echo $t->translate('settings_text'); ?>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -26,7 +26,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
                             <a class="dropdown-item text-danger" href="logout">
-                                <i class="bi bi-box-arrow-right"></i> Log Out
+                                <i class="bi bi-box-arrow-right"></i> <?php echo $t->translate('logout_text'); ?>
                             </a>
                         </li>
                     </ul>

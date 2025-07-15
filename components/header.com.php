@@ -1,12 +1,9 @@
 <?php
-require_once __DIR__ . '/lang.inc.php';
+require_once __DIR__ . '/../includes/lang.inc.php';
 
 $allowed_langs = ['French', 'English'];
 $lang = isset($_GET['lang']) && in_array($_GET['lang'], $allowed_langs) ? $_GET['lang'] : 'French'; // Exemple : ?lang=English
 $t = new Translator($lang);
-/**
- * V
- */
 ?>
 
 <!DOCTYPE html>
@@ -23,5 +20,5 @@ $t = new Translator($lang);
 <body class="d-flex flex-column min-vh-100">
 
 <header>
-<?php require_once 'includes/nav.inc.php';?>
+<?php require_once 'components/nav.com.php';?>
 </header>

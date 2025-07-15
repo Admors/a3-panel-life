@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Languages>
+    <Key ID="dashboard_text">
+        <French>Tableau de bord</French>
+        <English>Dashboard</English>
+    </Key>
+    <Key ID="stats_registers">
+        <French>Tableau de bord</French>
+        <English>Dashboard</English>
+    </Key>
+    <Key ID="stats_vehicles">
+        <French>Tableau de bord</French>
+        <English>Dashboard</English>
+    </Key>
+    <Key ID="stats_moneys">
+        <French>Tableau de bord</French>
+        <English>Dashboard</English>
+    </Key>
+    <Key ID="stats_currents">
+        <French>Tableau de bord</French>
+        <English>Dashboard</English>
+    </Key>
+    <Key ID="settings_text">
+        <French>Paramètres</French>
+        <English>Settings</English>
+    </Key>
+    <Key ID="logout_text">
+        <French>Déconnexion</French>
+        <English>Logout</English>
+    </Key>
     <Key ID="footer_text">
         <French>Fait avec 🔥 par Admors et Bragg pour la communauté.</French>
         <English>Made with 🔥 by Admors and Bragg for the community.</English>
