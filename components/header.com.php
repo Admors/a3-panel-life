@@ -20,5 +20,5 @@ $t = new Translator($lang);
 <body class="d-flex flex-column min-vh-100">
 
 <header>
-<?php require_once 'includes/nav.inc.php';?>
+<?php require_once 'components/nav.com.php';?>
 </header>

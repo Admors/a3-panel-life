@@ -1,7 +1,7 @@
 <main class="container-fluid flex-grow-1 my-4">
     <div class="row">
 
-        <?php require_once 'includes/aside.inc.php';?>
+        <?php require_once 'components/aside.com.php';?>
 
         <!-- Main Content -->
         <section class="col-md-9 col-lg-10">
