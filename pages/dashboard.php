@@ -19,13 +19,14 @@
             <div class="row g-4 mb-4">
                 <?php
                 include __DIR__ .'/../components/card.com.php';
-                generateCard('#007bff', '#007bff', 'bi-person', 'Players', '0 Registered');
-                generateCard('#28a745', '#28a745', 'bi-car-front', 'Vehicles', '0');
-                generateCard('#111111', '#111111', 'bi-shield-shaded', 'Gangs', '0 Gangs');
-                generateCard('#6f42c1', '#6f42c1', 'bi-house-door', 'Houses', '0 Houses');
-                generateCard('#007bff', '#007bff', 'bi-person-check', 'Players Today', '0');
-                generateCard('#ffc107', '#ffc107', 'bi-cash-stack', 'Total Money', '$0.00');
-                generateCard('#17a2b8', '#17a2b8', 'bi-person-lines-fill', 'Players Online', '0 connected');
+                generateCard('#007bff', '#007bff', 'bi-person', 'Players', '0 Registered on the island');
+                generateCard('#28a745', '#28a745', 'bi-car-front', 'Vehicles', '0 Vehicles owned');
+                generateCard('#111111', '#111111', 'bi-shield-shaded', 'Gangs', '0 Gangs created');
+                generateCard('#6f42c1', '#6f42c1', 'bi-house-door', 'Houses', '0 Houses purchased');
+                generateCard('#007bff', '#007bff', 'bi-person-check', 'Players Today', '0 players connected today');
+                generateCard('#ffc107', '#ffc107', 'bi-cash-stack', 'Money circulating', '$0.00');
+                generateCard('#17a2b8', '#17a2b8', 'bi-person-lines-fill', 'Players Online', 'Currently 0 players online');
+                generateCard('#28a745', '#28a745', 'bi-check-circle', 'Server Status', 'Server is Online');
                 ?>
             </div>
 
@@ -58,20 +59,12 @@
 
             <!-- Admin Shortcuts (Kick, Ban) -->
             <div class="row g-4 mb-4">
-                <!-- Kick Player Button -->
-                <div class="col-md-4">
-                    <button class="btn btn-outline-danger w-100" data-bs-toggle="modal" data-bs-target="#kickModal">
-                        <i class="bi bi-person-x fs-3"></i> Kick Player
-                    </button>
-                </div>
-
-                <!-- Ban Player Button -->
-                <div class="col-md-4">
-                    <button class="btn btn-outline-warning w-100" data-bs-toggle="modal" data-bs-target="#banModal">
-                        <i class="bi bi-person-x fs-3"></i> Ban Player
-                    </button>
-                </div>
-            </div>
+                <?
+                    include __DIR__ . '/../components/actionButton.com.php';
+                    generateActionButton('btn-outline-danger', 'bi-person-x', 'Kick Player', 'kickModal');
+                    generateActionButton('btn-outline-warning', 'bi-person-x', 'Ban Player', 'banModal');
+                    generateActionButton('btn-outline-success', 'bi-person-check', 'Unban Player', 'unbanModal');
+                ?>
 
             <!-- Kick Modal -->
             <div class="modal fade" id="kickModal" tabindex="-1" aria-labelledby="kickModalLabel" aria-hidden="true">
